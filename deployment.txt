@@ -1,0 +1,7 @@
+frontend - https://felicity-management-tau.vercel.app
+backend - https://felicity-management-backend.onrender.com
+
+gitHub - https://github.com/Beetle7/Felicity-Management
+
+Login Creds - 
+- Admin: wallelaval@gmail.com with password=blub
