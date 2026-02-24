@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: ['http://localhost:3000', 'https://felicity-management-tau.vercel.app'],
         methods: ['GET', 'POST']
     }
 });
@@ -20,7 +20,7 @@ const io = new Server(server, {
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'https://felicity-management-tau.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 
