@@ -3,9 +3,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const http = require('http');
 
-if (process.env.NODE_ENV !== 'production') {
-    dotenv.config();
-}
+dotenv.config();
 const app = express();
 const server = http.createServer(app);
 

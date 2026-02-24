@@ -17,6 +17,7 @@ const AdminBoard = () => {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchOrganizers();
         fetchResetRequests();

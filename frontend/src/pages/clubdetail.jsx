@@ -41,7 +41,7 @@ const ClubDetail = () => {
                     <tbody>
                         {events.map(event => (
                             <tr key={event._id}>
-                                <td><a href="#" onClick={(e) => { e.preventDefault(); navigate(`/events/${event._id}`); }}>{event.eventname}</a></td>
+                                <td><button onClick={() => navigate(`/events/${event._id}`)} style={{ background: 'none', border: 'none', color: 'blue', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}>{event.eventname}</button></td>
                                 <td>{event.type}</td>
                                 <td>{new Date(event.eventstart).toLocaleDateString()}</td>
                                 <td>{event.regfee || 'Free'}</td>

@@ -20,6 +20,7 @@ const Discussion = ({ eventId, isOrganizer }) => {
         } catch { return null; }
     })();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchMessages();
 

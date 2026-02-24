@@ -60,7 +60,7 @@ const ClubList = () => {
                     <tbody>
                         {clubs.map(club => (
                             <tr key={club._id}>
-                                <td><a href="#" onClick={(e) => { e.preventDefault(); navigate(`/clubs/${club._id}`); }}>{club.organizerName}</a></td>
+                                <td><button onClick={() => navigate(`/clubs/${club._id}`)} style={{ background: 'none', border: 'none', color: 'blue', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}>{club.organizerName}</button></td>
                                 <td>{club.category}</td>
                                 <td>{club.description}</td>
                                 {role === 'Participant' && token && (
