@@ -12,6 +12,7 @@ const QRScanner = () => {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => { fetchDashboard(); }, []);
 
     const fetchDashboard = async () => {
@@ -45,9 +46,7 @@ const QRScanner = () => {
         }
     };
 
-    const handleExportCSV = () => {
-        window.open(`${API_URL}/api/registrations/export/${eventId}?token=${token}`, '_blank');
-    };
+
 
     const handleExportAttendance = () => {
         if (!dashboard) return;
