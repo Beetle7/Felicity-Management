@@ -182,7 +182,14 @@ const getMerchOrders = async (req, res) => {
 const getHistory = async (req, res) => {
     try {
         const history = await Registration.find({ participant: req.user.id })
-            .populate('event', 'eventname eventstart eventend type status orgID regfee')
+            .populate({
+                path: 'event',
+                select: 'eventname eventstart eventend type status orgID regfee',
+                populate: {
+                    path: 'orgID',
+                    select: 'organizerName category'
+                }
+            })
             .sort({ createdAt: -1 });
         res.json(history);
     }

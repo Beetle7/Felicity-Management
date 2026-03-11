@@ -143,7 +143,9 @@ const getPublishedEvents = async (req, res) => {
         let query = { status: 'Published' };
 
         if (type && type !== 'All') query.type = type;
-        if (eligibility) query.eligibility = { $regex: eligibility, $options: 'i' };
+        if (eligibility && eligibility !== 'All') {
+            query.eligibility = { $in: [eligibility, 'All', 'all', ''] };
+        }
         if (dateFrom || dateTo) {
             query.eventstart = {};
             if (dateFrom) query.eventstart.$gte = new Date(dateFrom);
